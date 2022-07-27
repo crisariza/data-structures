@@ -1,39 +1,22 @@
-export default class Queue {
+class Queue {
   constructor() {
-    this.queue = [];
+    this.queue = []
   }
-
-  get length() {
-    return this.queue.length;
+  enqueue(item) { // Add an item to the back of the queue
+    this.queue.push(item)
   }
-
-  enqueue(item) {
-    this.queue.push(item);
+  dequeue() { // Remove an item from the front of the queue
+    this.queue.shift()
   }
-
-  dequeue() {
-    return this.queue.shift();
+  peek() { // Return the item at the front of the queue (but do not remove it)
+    return this.queue[0]
   }
-
-  peek() {
-    return this.queue[0];
+  isEmpty() { // Check wheter the queue is empty or not
+    return this.queue.length === 0
   }
-
-  isEmpty() {
-    return this.length === 0;
+  get length() { // Return the length of the queue
+    return this.queue.length
   }
 }
 
-const movieQueue = new Queue();
-movieQueue.enqueue("Emma");
-movieQueue.enqueue("Sarah");
-movieQueue.enqueue("Maranda");
-movieQueue.enqueue("Ivy");
-console.log(movieQueue.length); // 4
-console.log(movieQueue.peek()); // Emma
-movieQueue.dequeue();
-console.log(movieQueue.peek()); // Sarah
-movieQueue.dequeue();
-movieQueue.dequeue();
-movieQueue.dequeue();
-console.log(movieQueue.isEmpty()); // true
+var array = new Queue()
